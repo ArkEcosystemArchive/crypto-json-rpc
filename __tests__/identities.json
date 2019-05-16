@@ -1,0 +1,59 @@
+{
+	"mainnet": {
+		"passphrase": "this is a top secret passphrase",
+		"publicKey": "034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
+		"privateKey": "d8839c2432bfd0a67ef10a804ba991eabba19f154a3d707917681d45822a5712",
+		"address": "AGeYmgbg2LgGxRW2vNNJvQ88PknEJsYizC",
+		"wif": "SGq4xLgZKCGxs7bjmwnBrWcT4C1ADFEermj846KC97FSv1WFD1dA",
+		"multiSignature": {
+			"address": "AH3Ca9QE9u9jKKTdUaLjAQqcqK4ZmSkVqp",
+			"publicKey": "022952bc0ab373a15153b8b6cee2513e298eb7f3ffe6bc50fc850fd24e8ab6c66a",
+			"asset": {
+				"min": 3,
+				"publicKeys": [
+					"0205d9bbe71c343ac9a6a83a4344fd404c3534fc7349827097d0835d160bc2b896",
+					"03df0a1eb42d99b5de395cead145ba1ec2ea837be308c7ce3a4e8018b7efc7fdb8",
+					"03860d76b1df09659ac282cea3da5bd84fc45729f348a4a8e5f802186be72dc17f"
+				]
+			}
+		}
+	},
+	"devnet": {
+		"passphrase": "this is a top secret passphrase",
+		"publicKey": "034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
+		"privateKey": "d8839c2432bfd0a67ef10a804ba991eabba19f154a3d707917681d45822a5712",
+		"address": "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
+		"wif": "SGq4xLgZKCGxs7bjmwnBrWcT4C1ADFEermj846KC97FSv1WFD1dA",
+		"multiSignature": {
+			"address": "D6QRTuVF8APs3MSEeWfxZHk8EqsAmpkFHW",
+			"publicKey": "022952bc0ab373a15153b8b6cee2513e298eb7f3ffe6bc50fc850fd24e8ab6c66a",
+			"asset": {
+				"min": 3,
+				"publicKeys": [
+					"0205d9bbe71c343ac9a6a83a4344fd404c3534fc7349827097d0835d160bc2b896",
+					"03df0a1eb42d99b5de395cead145ba1ec2ea837be308c7ce3a4e8018b7efc7fdb8",
+					"03860d76b1df09659ac282cea3da5bd84fc45729f348a4a8e5f802186be72dc17f"
+				]
+			}
+		}
+	},
+	"testnet": {
+		"passphrase": "this is a top secret passphrase",
+		"publicKey": "034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
+		"privateKey": "d8839c2432bfd0a67ef10a804ba991eabba19f154a3d707917681d45822a5712",
+		"address": "AGeYmgbg2LgGxRW2vNNJvQ88PknEJsYizC",
+		"wif": "Ue7A6vSx7ewATPp2dA6UbJ8F39DbZwaHTqhD1MrhzmJqRJmvfZ6C",
+		"multiSignature": {
+			"address": "AH3Ca9QE9u9jKKTdUaLjAQqcqK4ZmSkVqp",
+			"publicKey": "022952bc0ab373a15153b8b6cee2513e298eb7f3ffe6bc50fc850fd24e8ab6c66a",
+			"asset": {
+				"min": 3,
+				"publicKeys": [
+					"0205d9bbe71c343ac9a6a83a4344fd404c3534fc7349827097d0835d160bc2b896",
+					"03df0a1eb42d99b5de395cead145ba1ec2ea837be308c7ce3a4e8018b7efc7fdb8",
+					"03860d76b1df09659ac282cea3da5bd84fc45729f348a4a8e5f802186be72dc17f"
+				]
+			}
+		}
+	}
+}

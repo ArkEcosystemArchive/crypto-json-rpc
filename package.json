@@ -1,0 +1,104 @@
+{
+	"name": "@arkecosystem/crypto-json-rpc",
+	"version": "0.1.0",
+	"description": "A JSON-RPC 2.0 specification compliant server to interact with ARK Cryptography.",
+	"homepage": "https://github.com/arkecosystem/crypto-json-rpc",
+	"bugs": {
+		"url": "https://github.com/arkecosystem/crypto-json-rpc/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:arkecosystem/crypto-json-rpc.git"
+	},
+	"license": "MIT",
+	"author": "Brian Faust <hello@basecode.sh>",
+	"files": [
+		"dist"
+	],
+	"main": "dist/index",
+	"types": "dist/index",
+	"scripts": {
+		"build": "yarn clean && tsc",
+		"build:watch": "yarn build -w",
+		"clean": "rimraf .coverage dist tmp",
+		"format": "yarn lint && yarn prettier",
+		"lint": "tslint -c tslint.json -p tslint.json 'src/**/*.ts' --fix",
+		"prepublishOnly": "yarn format && yarn test && yarn build",
+		"prettier": "prettier --write \"./*.{ts,js,json,md}\" \"./**/*.{ts,js,json,md}\"",
+		"start": "yarn build && node dist/index.js",
+		"start:watch": "yarn build && pm2 start dist/index.js --name crypto-json-rpc",
+		"test": "jest",
+		"test:watch": "jest --watchAll"
+	},
+	"jest": {
+		"bail": false,
+		"collectCoverage": true,
+		"collectCoverageFrom": [
+			"src/**/*.ts",
+			"!src/index.ts",
+			"!**/node_modules/**"
+		],
+		"coverageDirectory": "<rootDir>/.coverage",
+		"coverageReporters": [
+			"json",
+			"lcov",
+			"text",
+			"clover",
+			"html"
+		],
+		"moduleFileExtensions": [
+			"ts",
+			"tsx",
+			"js",
+			"jsx",
+			"json",
+			"node"
+		],
+		"setupFilesAfterEnv": [
+			"jest-extended"
+		],
+		"testEnvironment": "node",
+		"testMatch": [
+			"**/*.test.ts"
+		],
+		"transform": {
+			"^.+\\.tsx?$": "ts-jest"
+		},
+		"verbose": true
+	},
+	"dependencies": {
+		"@arkecosystem/crypto": "^2.4.0-next.3",
+		"@hapi/boom": "^7.4.2",
+		"@hapi/hapi": "^18.3.1",
+		"@hapi/joi": "^15.0.3",
+		"@hapist/json-rpc": "^0.1.0",
+		"got": "^9.6.0",
+		"meow": "^5.0.0",
+		"pino": "^5.12.4",
+		"pino-pretty": "^3.0.0"
+	},
+	"devDependencies": {
+		"@faustbrian/tslint": "^0.1.2",
+		"@types/got": "^9.4.4",
+		"@types/hapi__boom": "^7.4.0",
+		"@types/hapi__hapi": "^18.2.1",
+		"@types/hapi__joi": "^15.0.1",
+		"@types/jest": "^24.0.11",
+		"@types/meow": "^5.0.0",
+		"@types/node": "^11.13.7",
+		"@types/pino": "^5.20.0",
+		"@types/prettier": "^1.16.4",
+		"@types/rimraf": "^2.0.2",
+		"codecov": "^3.3.0",
+		"jest": "^24.7.1",
+		"jest-extended": "^0.11.1",
+		"prettier": "^1.17.0",
+		"rimraf": "^2.6.3",
+		"ts-jest": "^24.0.2",
+		"tslint": "^5.16.0",
+		"typescript": "^3.4.5"
+	},
+	"engines": {
+		"node": ">=10.x"
+	}
+}
