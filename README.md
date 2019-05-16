@@ -1,6 +1,8 @@
 # @arkecosystem/crypto-json-rpc
 
-> A JSON-RPC 2.0 specification compliant server to interact with ARK Cryptography.
+<p align="center">
+    <img src="https://raw.githubusercontent.com/ARKEcosystem/crypto-json-rpc/master/banner.png" />
+</p>
 
 [![Latest Version](https://badgen.now.sh/npm/v/@arkecosystem/crypto-json-rpc)](https://www.npmjs.com/package/@arkecosystem/crypto-json-rpc)
 [![Node Engine](https://badgen.now.sh/npm/node/@arkecosystem/crypto-json-rpc)](https://www.npmjs.com/package/@arkecosystem/crypto-json-rpc)
