@@ -1,6 +1,6 @@
 {
 	"name": "@arkecosystem/crypto-json-rpc",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "A JSON-RPC 2.0 specification compliant server to interact with ARK Cryptography.",
 	"homepage": "https://github.com/arkecosystem/crypto-json-rpc",
 	"bugs": {

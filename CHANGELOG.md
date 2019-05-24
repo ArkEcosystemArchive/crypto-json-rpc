@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## 0.2.0 - 2019-05-24
+
+### Changed
+
+-   Replaced `meow` with `@oclif` as CLI
+
 ## 0.1.0 - 2019-05-16
 
 -   Initial Release
