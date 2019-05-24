@@ -19,7 +19,33 @@ The purpose of this application is to serve as a server for SDKs to ensure compl
 ## Installation
 
 ```bash
-yarn add @arkecosystem/crypto-json-rpc
+yarn global add @arkecosystem/crypto-json-rpc
+```
+
+## Usage
+
+```sh
+$ crypto-json-rpc
+A JSON-RPC 2.0 specification compliant server to interact with ARK Cryptography.
+
+VERSION
+  @arkecosystem/crypto-json-rpc/0.2.0 darwin-x64 node-v10.15.3
+
+USAGE
+  $ crypto-json-rpc [COMMAND]
+
+COMMANDS
+  autocomplete  display autocomplete installation instructions
+  command
+  commands      list all the commands
+  help          display help for crypto-json-rpc
+  log           Show the log
+  restart       Restart the JSON-RPC
+  run           Run the JSON-RPC (without pm2)
+  start         Start the JSON-RPC
+  status        Show the JSON-RPC status
+  stop          Stop the JSON-RPC
+  update        Update the crypto-json-rpc installation
 ```
 
 ## Testing
