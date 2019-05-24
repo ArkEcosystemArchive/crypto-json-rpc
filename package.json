@@ -13,17 +13,25 @@
 	"license": "MIT",
 	"author": "Brian Faust <hello@basecode.sh>",
 	"files": [
-		"dist"
+		"/bin",
+		"/dist",
+		"/oclif.manifest.json"
 	],
 	"main": "dist/index",
 	"types": "dist/index",
+	"bin": {
+		"crypto-json-rpc": "./bin/run"
+	},
 	"scripts": {
+		"crypto-json-rpc": "./bin/run",
 		"build": "yarn clean && tsc",
 		"build:watch": "yarn build -w",
 		"clean": "rimraf .coverage dist tmp",
 		"format": "yarn lint && yarn prettier",
 		"lint": "tslint -c tslint.json -p tslint.json 'src/**/*.ts' --fix",
-		"prepublishOnly": "yarn format && yarn test && yarn build",
+		"prepack": "./node_modules/.bin/oclif-dev manifest && npm shrinkwrap",
+		"postpack": "rm -f oclif.manifest.json",
+		"prepublishOnly": "yarn build",
 		"prettier": "prettier --write \"./*.{ts,js,json,md}\" \"./**/*.{ts,js,json,md}\"",
 		"start": "yarn build && node dist/index.js",
 		"start:watch": "yarn build && pm2 start dist/index.js --name crypto-json-rpc",
@@ -36,6 +44,7 @@
 		"collectCoverageFrom": [
 			"src/**/*.ts",
 			"!src/index.ts",
+			"!src/cli/**/*.ts",
 			"!**/node_modules/**"
 		],
 		"coverageDirectory": "<rootDir>/.coverage",
@@ -68,28 +77,55 @@
 	},
 	"dependencies": {
 		"@arkecosystem/crypto": "^2.4.0-next.3",
-		"@hapi/boom": "^7.4.2",
+		"@faustbrian/foreman": "^0.1.2",
 		"@hapi/hapi": "^18.3.1",
-		"@hapi/joi": "^15.0.3",
 		"@hapist/json-rpc": "^0.2.0",
+		"@oclif/command": "^1.5.13",
+		"@oclif/config": "^1.13.0",
+		"@oclif/plugin-autocomplete": "^0.1.0",
+		"@oclif/plugin-commands": "^1.2.2",
+		"@oclif/plugin-help": "^2.1.6",
+		"@oclif/plugin-not-found": "^1.2.2",
+		"@oclif/plugin-plugins": "^1.7.8",
 		"ajv": "^6.10.0",
+		"chalk": "^2.4.2",
+		"clear": "^0.1.0",
+		"cli-table3": "^0.5.1",
+		"cli-ux": "^5.2.1",
+		"dayjs": "^1.8.14",
+		"execa": "^1.0.0",
+		"fast-levenshtein": "^2.0.6",
+		"fs-extra": "^8.0.1",
 		"got": "^9.6.0",
-		"meow": "^5.0.0",
+		"latest-version": "^5.1.0",
+		"lodash.minby": "^4.6.0",
+		"nodejs-tail": "^1.1.0",
 		"pino": "^5.12.5",
-		"pino-pretty": "^3.0.0"
+		"pino-pretty": "^3.0.0",
+		"pretty-bytes": "^5.2.0",
+		"pretty-ms": "^5.0.0",
+		"prompts": "^2.1.0",
+		"read-last-lines": "^1.7.1",
+		"semver": "^6.1.0"
 	},
 	"devDependencies": {
 		"@faustbrian/tslint": "^0.1.3",
+		"@oclif/dev-cli": "^1.22.0",
+		"@types/execa": "^0.9.0",
+		"@types/fast-levenshtein": "^0.0.1",
+		"@types/fs-extra": "^7.0.0",
 		"@types/got": "^9.4.4",
-		"@types/hapi__boom": "^7.4.0",
 		"@types/hapi__hapi": "^18.2.1",
-		"@types/hapi__joi": "^15.0.1",
 		"@types/jest": "^24.0.13",
-		"@types/meow": "^5.0.0",
+		"@types/lodash.minby": "^4.6.6",
 		"@types/node": "^12.0.2",
 		"@types/pino": "^5.20.0",
 		"@types/prettier": "^1.16.4",
+		"@types/pretty-bytes": "^5.1.0",
+		"@types/pretty-ms": "^4.0.0",
+		"@types/prompts": "^2.4.0",
 		"@types/rimraf": "^2.0.2",
+		"@types/semver": "^6.0.0",
 		"codecov": "^3.5.0",
 		"jest": "^24.8.0",
 		"jest-extended": "^0.11.1",
@@ -101,5 +137,22 @@
 	},
 	"engines": {
 		"node": ">=10.x"
+	},
+	"oclif": {
+		"commands": "./dist/cli/commands",
+		"hooks": {
+			"init": [
+				"./dist/cli/hooks/init/update"
+			],
+			"command_not_found": [
+				"./dist/cli/hooks/command_not_found/suggest"
+			]
+		},
+		"bin": "crypto-json-rpc",
+		"plugins": [
+			"@oclif/plugin-autocomplete",
+			"@oclif/plugin-commands",
+			"@oclif/plugin-help"
+		]
 	}
 }
