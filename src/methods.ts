@@ -114,7 +114,7 @@ export const methods = [
 		name: "transactions.deserialize",
 		async method(params: { transaction: string }) {
 			return {
-				transaction: Transactions.deserializer.deserialize(params.transaction),
+				transaction: Transactions.deserializer.deserialize(params.transaction).data,
 			};
 		},
 		schema: {
