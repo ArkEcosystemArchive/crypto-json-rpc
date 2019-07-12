@@ -1,8 +1,8 @@
 import { Foreman, ProcessIdentifier } from "@faustbrian/foreman";
-import { ExecaReturns } from "execa";
+import { ExecaSyncReturnValue } from "execa";
 
 class ProcessManager extends Foreman {
-	public restart(id: ProcessIdentifier): ExecaReturns {
+	public restart(id: ProcessIdentifier): ExecaSyncReturnValue {
 		return super.restart(id, { "update-env": true });
 	}
 
