@@ -10,6 +10,8 @@
 [![Codecov](https://badgen.now.sh/codecov/c/github/ArkEcosystem/crypto-json-rpc)](https://codecov.io/gh/ArkEcosystem/crypto-json-rpc)
 [![License: MIT](https://badgen.now.sh/badge/license/MIT/green)](https://opensource.org/licenses/MIT)
 
+> Lead Maintainer: [Joshua Noack](https://github.com/supaiku0)
+
 ## Disclaimer
 
 The purpose of this application is to serve as a server for SDKs to ensure compliance with `@arkecosystem/crypto`, this means there can be many breaking changes without any notice.
