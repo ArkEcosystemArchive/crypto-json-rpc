@@ -1,6 +1,6 @@
 import { IConfig } from "@oclif/config";
 import cli from "cli-ux";
-import { ExecaSyncReturnValue, sync } from "execa";
+import { sync } from "execa";
 import { closeSync, openSync, statSync } from "fs";
 import { ensureDirSync } from "fs-extra";
 import latestVersion from "latest-version";
@@ -28,7 +28,7 @@ const ensureCacheFile = (config: IConfig): string => {
 };
 
 export const installFromChannel = async (pkg: string, tag: string) => {
-	const { stdout, stderr } = await sync(`yarn global add ${pkg}@${tag}`, { shell: true });
+	const { stdout, stderr } = sync(`yarn global add ${pkg}@${tag}`, { shell: true });
 
 	if (stderr) {
 		// tslint:disable-next-line: no-console
