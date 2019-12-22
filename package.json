@@ -104,7 +104,7 @@
 		"pretty-ms": "^5.0.0",
 		"prompts": "^2.2.1",
 		"read-last-lines": "^1.7.1",
-		"semver": "^6.3.0"
+		"semver": "^7.0.0"
 	},
 	"devDependencies": {
 		"@faustbrian/tslint": "^0.1.3",
