@@ -101,7 +101,7 @@
 		"pino": "^5.13.3",
 		"pino-pretty": "^3.2.1",
 		"pretty-bytes": "^5.3.0",
-		"pretty-ms": "^5.0.0",
+		"pretty-ms": "^6.0.0",
 		"prompts": "^2.2.1",
 		"read-last-lines": "^1.7.1",
 		"semver": "^7.0.0"
