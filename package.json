@@ -122,7 +122,7 @@
 		"@types/pretty-bytes": "^5.2.0",
 		"@types/pretty-ms": "^5.0.1",
 		"@types/prompts": "^2.4.0",
-		"@types/rimraf": "^2.0.2",
+		"@types/rimraf": "^3.0.0",
 		"@types/semver": "^7.0.0",
 		"codecov": "^3.6.1",
 		"jest": "^25.0.0",
